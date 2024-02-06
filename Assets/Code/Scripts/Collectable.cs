@@ -10,6 +10,7 @@ public class Collectable : MonoBehaviour
 
     //In case we want to do anything with modifying the sprite during gameplay...?
     protected SpriteRenderer spriteRenderer;
+
     protected virtual void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -17,6 +18,7 @@ public class Collectable : MonoBehaviour
 
     public void Collect()
     {
+        Debug.Log("Earned points: " + value);
         //Announce the item was collected.
         OnCollected?.Invoke(value);
 
